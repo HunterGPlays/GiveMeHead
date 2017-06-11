@@ -1,0 +1,69 @@
+# GiveMeHead by Terrobility <3
+# I know I usually put fancy ASCII art in my plugin configurations but this one would literally blow you away.
+
+# x=x=x=x=x=x=x=x=x
+# | CONFIGURATION |
+# x=x=x=x=x=x=x=x=x
+# Please don't change the config version.
+config-version: 5
+
+# Enable debug messages. This requires the "givemehead.debug" permission node.
+debug: false
+
+plugin-messages:
+    no-permission: "&cYou don't have permission."
+    no-head-data: "&cWe couldn't find any data for this skull!"
+    head-command: "&aYou're holding the skull of &2%killed%&a, who was beheaded by &2%killer%&a."
+    right-click-skull: "&aThis skull belongs to &2%killed%&a, who was beheaded by &2%killer%&a."
+    right-click-skull-no-killer: "&aThis skull belongs to &2%killed%&a. We couldn't find any information on the killer." 
+    not-holding-skull: "&cYou must hold a skull in your hand!"
+    stole-money-from: "&7You stole &a$%amount% &8(&f%percentage%%&8) &7from &b%killed%&7! You now have &2$%killerbalance%&7."
+    was-stolen-from: "&b%killer% &7stole &a$%amount% &8(&f%percentage%%&8) &7from you! You now have &2$%killedbalance%&7."
+    give-head-not-online: "&cYou can't give head to a player that isn't online!"
+    gave-head: "&aSuccessfully gave &2%player% &aa head belonging to &e&l&o%killed%&a, who was killed by &f%killer%&a!"
+    given-head: "&aYou were given a head belonging to &e&l&o%killed%&a, who was killed by &f%killer%&a!"
+
+beheading:
+    enabled: true
+    blocked-worlds:
+        - world_test
+    head:
+        name: "&e&l&o%killed%&6&o's Head"
+        lore:
+        - "&7Killed by &f%killer%&7."
+    probability:
+        regular-base-chance: 5
+        out-of: 100
+        # Change the base chance if the killer has looting on their sword.
+        looting-base-chance:
+            # If the killer has level 1 looting.
+            level1: 7
+            # If the killer has level 2 looting.
+            level2: 10
+            # Level 3 also includes any levels of looting above it.
+            level3: 15
+    head-hunting:
+        # This requires Vault!
+        # Steal a random percentage of money from the killed person's balance when you kill them.
+        enabled: true
+        # Either "flat" or "percentage".
+        mode: percentage
+        flat:
+            # Whether to allow the killed player's balance go into negatives.
+            minus-money: false
+            # How much money to take from the player.
+            amount: 69
+        percentage:
+            # The minimum percentage of money the killer can steal.
+            minimum-percentage: 10
+            # The maximum percentage of money the killer can steal.
+            maximum-percentage: 30
+    death-message:
+        # Replace the death message with the message below.
+        change-death-message: false
+        # Use the in-built broadcaster to show everyone the message below.
+        use-bukkit-broadcaster: true
+        # Use their raw name or their display name in the message.
+        use-player-display-name: true
+        # Placeholders: %killed%, %killer%, %chance%, %outof%, %randomnumbergenerated%
+        message: "&e%killed%&e was beheaded by %killer%&e! &8(&f%chance%&7/&f%outof%&8)"

@@ -1,0 +1,30 @@
+name: GiveMeHead
+main: net.terrocidepvp.givemehead.GiveMeHead
+version: 1.3.2
+author: Terrobility
+softdepend: [Vault]
+description: Give players a chance to behead others and steal their money!
+website: https://terrocidepvp.net/
+commands:
+    behead:
+        aliases: [beheading, givemehead, gmh, head]
+        description: "Show head information."
+    givehead:
+        usage: "/givehead [player] [headof] [killedby]"
+        description: "Give a player a head."
+permissions:
+    givemehead.use:
+        description: "Allows you to use '/behead' to show who the currently held head belongs to."
+        default: op
+    givemehead.rightclick:
+        description: "Allows you to right-click a head to see the name of the killer and victim."
+        default: op
+    givemehead.exempt:
+        description: "Anyone with this permission node is exempt from getting beheaded/money taken from them."
+        default: op
+    givemehead.debug:
+        description: "Anyone with this permission node will receive debug messages if it is enabled in the config."
+        default: op
+    givemehead.give:
+        description: "Give a head to another player using '/givehead' or '/behead give'."
+        default: op
