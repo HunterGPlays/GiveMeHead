@@ -1,9 +1,9 @@
 name: GiveMeHead
 main: net.terrocidepvp.givemehead.GiveMeHead
-version: 1.3.2
+version: ${project.version}
 author: Terrobility
 softdepend: [Vault]
-description: Give players a chance to behead others and steal their money!
+description: ${project.description}
 website: https://terrocidepvp.net/
 commands:
     behead:
